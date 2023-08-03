@@ -1,0 +1,31 @@
+#server:
+#  port : 8081
+
+# database
+spring:
+  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    # 개인 PC에서 만들어놓은 Database이름을 작성
+#    url: jdbc:mysql://localhost:3306/member_service_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    url: jdbc:h2:tcp://localhost/~/test
+    # mysql에 생성한 사용자 계정 정보를 작성
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  thymeleaf:
+    cache: false
+
+  # Spring data jpa
+  jpa:
+#    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+#    show-sql: true
+    hibernate:
+#      ddl-auto: update
+      hbm2ddl.auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+  logging.level:
+    org.hibernate.SQL: debug

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EX-05</title>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+<button onclick="ex05Fn()">ex05 함수 호출</button>
+</body>
+<script>
+  const ex05Fn = () =>{
+    const val1 = "hello springboot!";
+    const params = {
+      "param1": val1,
+      "param2": "Hi"
+    }
+
+    $.ajax({
+      type: "get",
+      url: "/ex05",
+      data: params,
+      success: function(res) {
+        console.log("성공", res);
+      },
+      error: function() {
+        console.log("실패");
+      }
+    });
+  }
+</script>
+</html>

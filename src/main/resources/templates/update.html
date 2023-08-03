@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>update file</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+  <form action="/member/update" method="post">
+    <input type="hidden" th:value="${updateMember.id}" name="id"><br>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" type="text" th:value="${updateMember.memberEmail}" name="memberEmail" class="form-control" readonly>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control"id="pwd" th:value="${updateMember.memberPassword}" name="memberPassword">
+    </div>
+    <div class="form-group">
+      <label for="memberName">MemberName:</label>
+      <input class="form-control" id="memberName" type="text" th:value="${updateMember.memberName}" name="memberName">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">정보 수정</button>
+  </form>
+</div>
+</body>
+</html>
